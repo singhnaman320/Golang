@@ -1,2 +1,2 @@
 # Golang
-This repository deals with implementation Go language
+This repository deals with implementation of Go language
