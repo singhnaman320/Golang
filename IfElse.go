@@ -7,7 +7,7 @@ func main() {
 	fmt.Println("Learning if-else with Golang")
 
 	// 1.
-	num := 50
+	num := 50 //:= is for declaration + assignment
 	var outcome string
 
 	if num > 50 {
