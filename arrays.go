@@ -19,7 +19,7 @@
 
 // Syntax:
 
-// array_name:= [length]Type{item1, item2, item3,...itemN}
+// array_name := [length]Type{item1, item2, item3,...itemN}
 
 // [] Multi-Dimensional Array
 
@@ -110,4 +110,63 @@ func main() {
 
 		}
 	}
+
+	// 5. If an array does not initialize explicitly, then the default value of this array is 0.
+
+	var givenValues [2]int
+	fmt.Println("Elements of array are:", givenValues)
+
+	// 6. In an array, you can find the length of the array using len() method
+
+	arr1 := [5]int{3, 7, 1, 9, 10}
+
+	// In an array, if ellipsis ‘‘…’’ become visible at the place of length, then the length of the array is determined by the initialized elements.
+	arr2 := [...]int{1, 7, 3, 5, 8, 9, 24, 11}
+
+	fmt.Println("Length of the array-01 is:", len(arr1))
+	fmt.Println("Length of the array-02 is:", len(arr2))
+
+	// 7. In an array, you are allowed to iterate over the range of the elements of the array.
+
+	thisArray := [...]int{11, 24, 9, 17, 23, 25, 30, 44, 21, 20, 13, 19}
+
+	for i := 0; i < len(thisArray); i++ {
+
+		fmt.Println("Elements of array are:", thisArray[i])
+		//OR
+		//fmt.Printf("Elements of array are %d\n:", thisArray[i])
+	}
+
+	// 8. In Go language, an array is of value type not of reference type. So when the array is assigned to a new variable, then the
+	// changes made in the new variable do not affect the original array
+
+	oldArray := [...]string{"This", "arrays", "with", "Golang"}
+	fmt.Println("Original array before:", oldArray)
+
+	newArray := oldArray
+	fmt.Println("New array before:", newArray)
+
+	// Change the value at index 0 to Learning
+	newArray[0] = "Learning"
+
+	fmt.Println("New array after:", newArray)
+	fmt.Println("Original array after:", oldArray)
+
+	// 9. In an array, if the element type of the array is comparable, then the array type is also comparable. So we can directly compare
+	// two arrays using == operator
+
+	array1 := [3]int{9, 7, 6}
+	array2 := [...]int{9, 7, 6}
+	array3 := [3]int{9, 5, 3}
+
+	// Comparing arrays using == operator
+	fmt.Println(array1 == array2)
+	fmt.Println(array2 == array3)
+	fmt.Println(array1 == array3)
+
+	// This will give and error because the
+	// type of arr1 and arr4 is a mismatch
+	// array4:= [4]int{9,7,6}
+	// fmt.Println(array1==array4)
+
 }
