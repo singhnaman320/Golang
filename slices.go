@@ -32,8 +32,44 @@ func main() {
 	slices = append(slices, 15, 22, 26)
 
 	fmt.Println("Slices:", slices)
-	fmt.Println("Slices:", sort.IntsAreSorted(slices))
+	fmt.Println("Slices:", sort.IntsAreSorted(slices)) //false
 
-	// 3.
+	// 3. Declaration of Slice
+	// A slice is declared just like an array, but it doesn’t contain the size of the slice. So it can grow or shrink according to the requirement.
 
+	// Syntax:
+
+	// []T
+	// or
+	// []T{}
+	// or
+	// []T{value1, value2, value3, ...value n}
+	// Here, T is the type of the elements.
+
+	//Example:
+	// var my_slice[]int
+
+	// [] Components of Slice
+	// A slice contains three components:
+
+	// Pointer: The pointer is used to points to the first element of the array that is accessible through the slice. Here, it is not necessary that
+	// the pointed element is the first element of the array.
+	// Length: The length is the total number of elements present in the array.
+	// Capacity: The capacity represents the maximum size upto which it can expand.
+
+	letters := []string{"start", "learning", "slice", "with", "golang"}
+
+	fmt.Println("Array is:", letters)
+
+	letter_slice := letters[1:5]
+
+	fmt.Println("slice array is", letter_slice)
+
+	fmt.Printf("Length of slice: %d\n", len(letter_slice)) //4
+
+	fmt.Printf("Capacity of slice: %d\n", cap(letter_slice)) //4
+
+	//Explanation: In the above example, we create a slice from the given array. Here the pointer of the slice pointed to index 1 because the
+	// lower bound of the slice is set to one so it starts accessing elements from index 1. The length of the slice is 4, which means the total
+	// number of elements present in the slice is 5 and the capacity of the slice 5 means it can store a maximum of 6 elements in it.
 }
