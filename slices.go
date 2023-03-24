@@ -149,4 +149,153 @@ func main() {
 	fmt.Println("Second slice", slice_Two)
 	fmt.Println("Third slice", slice_Three)
 	fmt.Println("Four slice", slice_Four)
+
+	// 7.
+
+	// =-=-=-=-=-=-=-=-=-=-Using make() function:=-=-=-=-=-=---=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-
+
+	//You can also create a slice using the make() function which is provided by the go library. This function takes
+	// three parameters, i.e, type, length, and capacity. Here, capacity value is optional. It assigns an underlying array with a size that is
+	// equal to the given capacity and returns a slice which refers to the underlying array. Generally, make() function is used to create an empty
+	// slice. Here, empty slices are those slices that contain an empty array reference.
+
+	// Syntax:
+
+	// func make([]T, len, cap) []T
+
+	// Creating an array of size 7 and slice this array  till 4 and return the reference of the slice Using make function
+
+	slice_1 := make([]int, 5, 7)
+	fmt.Printf("slice_1= %v\n, length= %d\n, capacity= %d\n", slice_1, len(slice_1), cap(slice_1))
+
+	// Creating another array of size 7 and return the reference of the slice Using make function
+
+	var slice_2 = make([]int, 7)
+	fmt.Printf("Slice 2 = %v, \nlength = %d, \ncapacity = %d\n", slice_2, len(slice_2), cap(slice_2))
+
+	// 8.
+
+	// How to iterate over a slice?
+
+	// (A) Using for loop:
+
+	myslice := []string{"This", "is", "slice", "tutorial", "of", "Go", "language"}
+
+	// Iterate using for loop
+	for i := 0; i < len(myslice); i++ {
+
+		fmt.Println(myslice[i])
+	}
+
+	// (B) Using range in for loop:
+	//Using range in the for loop, you can get the index and the element value:
+
+	thisSlice := []string{"This", "is", "slice", "tutorial", "of", "Go", "language"}
+
+	for index, element := range thisSlice {
+
+		fmt.Printf("Index = %d and element = %s\n", index, element)
+	}
+
+	// 9.
+
+	// Using a blank identifier in for loop:
+
+	// In the range for loop, if you don’t want to get the index value of the elements then you can use
+	// blank space(_) in place of index variable :
+
+	givenSlice := []string{"This", "is", "slice", "tutorial", "of", "Go", "language"}
+
+	for _, elem := range givenSlice {
+
+		fmt.Printf("element = %s\n", elem)
+	}
+
+	// 10.
+
+	// =-=--=-=-=-=-=-=--=--=-=-=--=-=-=- [] IMPORTANT POINTS [] =-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=
+
+	// [] Zero value slice:
+
+	// In Go language, you are allowed to create a nil slice that does not contain any element in it. So the capacity and the length of this slice
+	// is 0. Nil slice does not contain an array reference
+
+	var slicing []string
+	fmt.Printf("Length = %d\n", len(slicing))
+	fmt.Printf("Capacity = %d ", cap(slicing))
+
+	// [] Modifying Slice:
+	// As we already know that slice is a reference type it can refer an underlying array. So if we change some elements in the slice, then the
+	// changes should also take place in the referenced array. Or in other words, if you made any changes in the slice, then it will also reflect
+	//  in the array.
+
+	integerArray := [8]int{45, 21, 27, 11, 19, 41, 38, 76}
+
+	slicedIntegerArray := integerArray[0:6]
+
+	fmt.Println("\nInteger Array:", integerArray)
+	fmt.Println("Sliced Integer Array:", slicedIntegerArray)
+
+	slicedIntegerArray[0] = 171
+	slicedIntegerArray[1] = 109
+	slicedIntegerArray[2] = 348
+	slicedIntegerArray[3] = 225
+
+	fmt.Println("Integer Array:", integerArray)
+	fmt.Println("Sliced Integer Array:", slicedIntegerArray)
+
+	// [] Comparison of Slice:
+	// In Slice, you can only use == operator to check the given slice is nill or not. If you try to compare two slices with the help of ==
+	// operator then it will give you an error Comparison of Slice: In Slice, you can only use == operator to check the given slice is nill
+	//or not. If you try to compare two slices with the help of == operator then it will give you an error Comparison of Slice: In Slice, you
+	// can only use == operator to check the given slice is nill or not. If you try to compare two slices with the help of == operator then it
+	// will give you an error
+
+	s1 := []int{5, 6, 8, 11}
+	var s2 []int
+	s3 := []int{13, 7, 1, 5}
+
+	//fmt.Println(s1 == s3) --> Error: invalid operation: s1 == s3 (slice can only be compared to nil)
+
+	fmt.Println(s1 == nil)
+	fmt.Println(s2 == nil)
+	fmt.Println(s3 == nil)
+
+	// [] Note: If you want to compare two slices, then use range for loop to match each element or you can use DeepEqual function.[]
+
+	// []Multi-Dimensional Slice:
+	// Multi-dimensional slice are just like the multidimensional array, except that slice does not contain the size.
+
+	// [] M1:
+	multiSlice_01 := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+
+	fmt.Print("Multi-Dimensional Slice-01:", multiSlice_01)
+
+	// [] M2:
+
+	multiSlice_02 := [][]string{[]string{"learn", "golang"}, []string{"learn slice"}, []string{"slice", "array"}}
+
+	fmt.Println("\nMulti-Dimensional Slice-02:", multiSlice_02)
+
+	// [] Sorting of Slice:
+
+	// In Go language, you are allowed to sort the elements present in the slice. The standard library of Go language provides the sort package
+	// which contains different types of sorting methods for sorting the slice of ints, float64s, and strings. These functions always sort the
+	// elements available is slice in ascending order.
+
+	sortSlice_01 := []string{"Python", "Java", "C#", "Go", "Swift"}
+	sortSlice_02 := []int{38, 41, 22, 15, 17, 40, 33, 91}
+
+	fmt.Println("Before sorting slices are :")
+
+	fmt.Println("\nsortSlice_01", sortSlice_01)
+	fmt.Println("sortSlice_02", sortSlice_02)
+
+	sort.Strings(sortSlice_01)
+	sort.Ints(sortSlice_02)
+
+	fmt.Println("After sorting slices are :")
+
+	fmt.Println("\nsortSlice_01", sortSlice_01)
+	fmt.Println("sortSlice_02", sortSlice_02)
 }
