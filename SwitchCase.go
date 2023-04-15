@@ -43,7 +43,7 @@ func main() {
 		fmt.Println("Move 6 spots and take another chance..")
 
 	default:
-		fmt.Println("No face of dice can have more tan 6 points..")
+		fmt.Println("No face of dice can have more than 6 points..")
 	}
 
 	// In Go, the control comes out of the switch statement immediately after a case is executed. A fallthrough statement is used to

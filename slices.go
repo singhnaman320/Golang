@@ -85,7 +85,7 @@ func main() {
 	// You can create a slice using the slice literal. The creation of slice literal is just like an array literal, but with one difference you
 	// are not allowed to specify the size of the slice in the square braces[]. As shown in the below example, the right-hand side of this
 	// expression is the slice literal.
-	// var my_slice_1 = []string{"Geeks", "for", "Geeks"}
+	// var my_slice_1 = []string{"Good", "for", "Good"}
 	// Note: Always remember when you create a slice using a string literal, then it first creates an array and after that return a slice
 	// reference to it.
 
@@ -246,10 +246,7 @@ func main() {
 
 	// [] Comparison of Slice:
 	// In Slice, you can only use == operator to check the given slice is nill or not. If you try to compare two slices with the help of ==
-	// operator then it will give you an error Comparison of Slice: In Slice, you can only use == operator to check the given slice is nill
-	//or not. If you try to compare two slices with the help of == operator then it will give you an error Comparison of Slice: In Slice, you
-	// can only use == operator to check the given slice is nill or not. If you try to compare two slices with the help of == operator then it
-	// will give you an error
+	// operator then it will give you an error Comparison of Slice.
 
 	s1 := []int{5, 6, 8, 11}
 	var s2 []int
