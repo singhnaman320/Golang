@@ -23,6 +23,11 @@ import "fmt"
 
 // var mymap map[int]string
 
+// In maps, the zero value of the map is nil and a nil map doesn’t contain any key. If you try to add a key-value pair in the nil map, then 
+// the compiler will throw runtime error. 
+// Initializing map using map literals: Map literal is the easiest way to initialize a map with data just simply separate the key-value pair with 
+// a colon and the last trailing colon is necessary if you do not use, then the compiler will give an error. 
+
 func main(){
 
 	
