@@ -14,4 +14,15 @@ import "fmt"
 
 func main() {
 
+	var mapByMake = make(map[float64]string)
+
+	fmt.Println(mapByMake) // output : map[]
+
+	mapByMake[12.5] = "Naman"
+	mapByMake[17.9] = "Kaushik"
+	mapByMake[10.5] = "Nishant"
+	mapByMake[14.2] = "Prashant"
+	mapByMake[16.7] = "Vishal"
+
+	fmt.Println(mapByMake) // Output: map[10.5:Nishant 12.5:Naman 14.2:Prashant 16.7:Vishal 17.9:Kaushik]
 }
