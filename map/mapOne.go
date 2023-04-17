@@ -31,8 +31,10 @@ import "fmt"
 
 func main() {
 
+	// Creating and initializing empty map using var keyword
 	var firstMap map[int]string
 
+	// Checking if the map is nil or not
 	if firstMap == nil {
 
 		fmt.Println("True")
@@ -42,6 +44,7 @@ func main() {
 		fmt.Println("False")
 	}
 
+	// Creating and initializing a map using shorthand declaration and using map literals
 	secMap := map[int]string{
 
 		10: "This is 10",
