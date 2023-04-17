@@ -14,9 +14,13 @@ import "fmt"
 
 func main() {
 
+	// Creating a map
+    // Using make() function
 	var mapByMake = make(map[float64]string)
 
 	fmt.Println(mapByMake) // output : map[]
+
+	 // As we already know that make() function always returns a map which is initialized So, we can add values in it
 
 	mapByMake[12.5] = "Naman"
 	mapByMake[17.9] = "Kaushik"
