@@ -23,7 +23,9 @@ import (
 
 func main() {
 
+	// Calling Date() method with all its parameters
 	givenTime := time.Date(2022, time.April, 10, 24, 60, 57, 00, time.UTC)
 
-	fmt.Printf("Time is %s", givenTime.Local())
+	// Using Local() for location and printing the stated time and date in UTC
+	fmt.Printf("Date is %s", givenTime.Local())
 }
