@@ -21,6 +21,9 @@ import (
 // Note: Here, the value of the month, day hour, min, sec and nsec can be more than the normal ranges but they will be automatically normalized
 // during the conversion. For example, if the date is April 34 then it is converted to May 1.
 
-func main(){
+func main() {
 
+	givenTime := time.Date(2022, time.April, 10, 24, 60, 57, 00, time.UTC)
+
+	fmt.Printf("Time is %s", givenTime.Local())
 }
